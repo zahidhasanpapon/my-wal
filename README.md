@@ -3,7 +3,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/zahidhasanpapon/my-wal)](https://goreportcard.com/report/github.com/zahidhasanpapon/my-wal)
 
 A high-performance, thread-safe Write-Ahead Logging (WAL) implementation in Go, designed for
-building reliable storage systems.
+building reliable write heavy storage systems.
 
 ## Prerequisites
 
