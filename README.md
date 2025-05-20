@@ -8,8 +8,7 @@ building reliable write heavy storage systems.
 ## Prerequisites
 
 - [Go](https://golang.org/doc/install) 1.24.3 or later
-- [Bazel](https://bazel.build/install) for building (optional, Go modules also supported)
-- [Protocol Buffer](https://grpc.io/docs/protoc-installation/) compiler (for regenerating protos)
+- [Bazel](https://bazel.build/install) for building
 
 ## Building and Testing
 
