@@ -1,0 +1,18 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "writer",
+    srcs = ["writer.go"],
+    importpath = "github.com/zahidhasanpapon/my-wal/pkg/writer",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//proto",
+        "@org_golang_google_protobuf//proto",
+    ],
+)
+
+go_test(
+    name = "writer_test",
+    srcs = ["writer_test.go"],
+    embed = [":writer"],
+)
