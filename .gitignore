@@ -1,44 +1,45 @@
-# Allowlisting gitignore template for GO projects prevents us
-# from adding various unwanted local files, such as generated
-# files, developer configurations or IDE-specific files etc.
+# If you prefer the allow list template instead of the deny list, see community template:
+# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
 #
-# Recommended: Go.AllowList.gitignore
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
 
-# Ignore everything
-*
+# Test binary, built with `go test -c`
+*.test
 
-# But not these files...
-!/.gitignore
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
 
-!*.go
-!go.sum
-!go.mod
+# Dependency directories (remove the comment below to include it)
+# vendor/
 
-!README.md
-!LICENSE
+# Go workspace file
+go.work
+go.work.sum
 
-# !Makefile
+# env file
+.env
 
-# ...even if they are in subdirectories
-!*/
+ # gitignore template for Bazel build system
+ # website: https://bazel.build/
 
-# gitignore template for Bazel build system
-# website: https://bazel.build/
+ # Ignore all bazel-* symlinks. There is no full list since this can change
+ # based on the name of the directory bazel is cloned into.
+ /bazel-*
 
-# Ignore all bazel-* symlinks. There is no full list since this can change
-# based on the name of the directory bazel is cloned into.
-/bazel-*
+ # Directories for the Bazel IntelliJ plugin containing the generated
+ # IntelliJ project files and plugin configuration. Seperate directories are
+ # for the IntelliJ, Android Studio and CLion versions of the plugin.
+ /.ijwb/
+ /.aswb/
+ /.clwb/
 
-# Directories for the Bazel IntelliJ plugin containing the generated
-# IntelliJ project files and plugin configuration. Seperate directories are
-# for the IntelliJ, Android Studio and CLion versions of the plugin.
-/.ijwb/
-/.aswb/
-/.clwb/
-
-
-# ignore all idea settings
-.idea/*
-*.iws
-*.iml
-*.ipr
+ # ignore all idea settings
+ .idea/*
+ *.iws
+ *.iml
+ *.ipr
