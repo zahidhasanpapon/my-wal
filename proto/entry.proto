@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/zahidhasanpapon/my-wal/proto";
+
+// LogEntry represents a single write-ahead log entry
+message LogEntry {
+  // Unique identifier for the entry
+  uint64 sequence_number = 1;
+
+  // Timestamp of the entry (Unix timestamp in nanoseconds)
+  int64 timestamp = 2;
+
+  // Type of operation
+  OperationType operation_type = 3;
+
+  // Key for the operation
+  bytes key = 4;
+
+  // Value/data associated with the operation
+  bytes value = 5;
+
+  // Optional metadata
+  map<string, string> metadata = 6;
+}
+
+// OperationType defines the type of operation in the WAL
+enum OperationType {
+  OPERATION_TYPE_UNSPECIFIED = 0;
+  OPERATION_TYPE_PUT = 1;
+  OPERATION_TYPE_DELETE = 2;
+  OPERATION_TYPE_CHECKPOINT = 3;
+}
