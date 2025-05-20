@@ -1,46 +1,44 @@
 # WAL (Write-Ahead Log)
 
-A Write-Ahead Logging (WAL) implementation in Go.
+[![Go Report Card](https://goreportcard.com/badge/github.com/zahidhasanpapon/my-wal)](https://goreportcard.com/report/github.com/zahidhasanpapon/my-wal)
 
-## Project Overview
-
-WAL is a technique used in database systems to ensure data integrity by logging changes before they
-are applied to the database.
+A high-performance, thread-safe Write-Ahead Logging (WAL) implementation in Go, designed for
+building reliable storage systems.
 
 ## Prerequisites
 
-- [Bazel](https://bazel.build/install) build system
-- [Go](https://golang.org/doc/install) programming language
+- [Go](https://golang.org/doc/install) 1.24.3 or later
+- [Bazel](https://bazel.build/install) for building (optional, Go modules also supported)
+- [Protocol Buffer](https://grpc.io/docs/protoc-installation/) compiler (for regenerating protos)
 
-## Building the Project
+## Building and Testing
 
-To build the project:
-
-```bash
-bazel build //:go_wal
-```
-
-## Running the Project
-
-To run the project:
+### Building with Bazel
 
 ```bash
-bazel run //:go_wal
+# Build everything
+bazel build //...
+
+# Run tests
+bazel test //...
+
+# Build and run a specific target
+bazel run //cmd/wal:main
 ```
 
-## Development
-
-### Update Dependencies
-
-To update Bazel dependencies:
+### Running Tests
 
 ```bash
-bazel run //:gazelle-update-repos
+# Run all tests
+bazel test //...
+
+# Run specific test
+bazel test //internal/wal/writer:go_default_test
 ```
 
-### Generate BUILD Files
+### Generate BUILD Files and Update Dependencies
 
-To generate/update BUILD files:
+To (re-)generate BUILD files:
 
 ```bash
 bazel run //:gazelle
